@@ -22,6 +22,16 @@ This project template includes the following features to ensure best practices:
 - **Continuous integration and delivery** with [GitHub Actions](https://github.com/features/actions), with jobs to run tests, publishing to test PyPI and releasing to PyPI and GitHub on new tags.
 - **Conventional commits and semantic versioning** with [commitizen](https://commitizen-tools.github.io/commitizen) to enforce [conventional commits](https://www.conventionalcommits.org) (with `commit-msg` pre-commit hooks), version bumping using [semantic versioning](https://semver.org) and automated change log generation.
 
+## TODO
+
+- Adopt GitOps workflow:
+  - **Branch protection**: only allow push on feature branches
+  - **Run tests on pull requests only**: however, require that tests must be up to date before merging
+  - **Building wheels**: (see https://realpython.com/python-wheels/)
+    - do *NOT* build wheels on dependabot/pre-commit.ci pull requests
+    - tagged commits (i.e., releases) should *NOT* rebuild wheels, instead, they should *ONLY* download artifacts and release.
+  - **Continuous delivery** to TestPyPI and PyPI using trusted publishing (see https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/)
+
 ## Usage
 
 ### First time setup
